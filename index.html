@@ -2,44 +2,294 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I'm Sorry, Azhaka ❤️</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For Azhaka - Secret Love Vault</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
-    <div class="background-animation">
-        <span></span><span></span><span></span><span></span><span></span>
-    </div>
-    
-    <div class="container" id="main-container">
-        <div class="glass-card">
-            <div class="icon-container">
-                <div class="sad-face" id="emoji">🥺</div>
+    <!-- Scene 0: The Lock Screen -->
+    <section id="scene-0" class="lock-screen">
+        <div class="vault-door">
+            <div class="vault-door-left">
+                <div class="vault-pattern"></div>
             </div>
-            <h1 class="title">I'm so sorry, Azhaka.</h1>
-            <p class="message" id="message">
-                I messed up, and I want to make it right. You mean the world to me, and seeing you upset breaks my heart. 
-                Can you please find it in your beautiful heart to forgive me?
-            </p>
-            
-            <div class="buttons">
-                <button class="btn btn-yes" id="yes-btn">Yes, I forgive you</button>
-                <button class="btn btn-no" id="no-btn">No way</button>
+            <div class="vault-door-right">
+                <div class="vault-pattern"></div>
             </div>
         </div>
+        
+        <div class="lock-content">
+            <div class="lock-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#FF2A55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+            </div>
+            
+            <h1 class="lock-title">For Azhaka</h1>
+            <p class="lock-subtitle">Enter the secret code to unlock our love story</p>
+            
+            <div class="password-container">
+                <input type="password" id="password-input" class="password-input" maxlength="4" placeholder="••••" inputmode="numeric" pattern="[0-9]*">
+                <button id="unlock-btn" class="unlock-btn">
+                    <span>Unlock</span>
+                </button>
+            </div>
+            
+            <div id="error-message" class="error-message">
+                <p>Wrong code, my love! Try again 💕</p>
+            </div>
+        </div>
+        
+        <div class="floating-hearts">
+            <div class="heart">💕</div>
+            <div class="heart">💗</div>
+            <div class="heart">💖</div>
+            <div class="heart">💘</div>
+            <div class="heart">💝</div>
+        </div>
+    </section>
+
+    <!-- Main Content (Hidden initially) -->
+    <div id="main-content" class="main-content">
+        <!-- Scene 1: The Hook & The Flowers -->
+        <section id="scene-1" class="scene scene-1">
+            <div class="bouquet-container">
+                <!-- Roses -->
+                <div class="flower-item flower-rose-1">🌹</div>
+                <div class="flower-item flower-rose-2">🌹</div>
+                <div class="flower-item flower-rose-3">🌹</div>
+                <!-- Tulips -->
+                <div class="flower-item flower-tulip-1">🌷</div>
+                <div class="flower-item flower-tulip-2">🌷</div>
+                <div class="flower-item flower-tulip-3">🌷</div>
+                <!-- Lilies -->
+                <div class="flower-item flower-lily-1">🌺</div>
+                <div class="flower-item flower-lily-2">🌺</div>
+                <!-- Sunflowers -->
+                <div class="flower-item flower-sunflower-1">🌻</div>
+                <div class="flower-item flower-sunflower-2">🌻</div>
+                <!-- Cherry Blossoms -->
+                <div class="flower-item flower-blossom-1">🌸</div>
+                <div class="flower-item flower-blossom-2">🌸</div>
+                <div class="flower-item flower-blossom-3">🌸</div>
+                <!-- Daisies -->
+                <div class="flower-item flower-daisy-1">🌼</div>
+                <div class="flower-item flower-daisy-2">🌼</div>
+                <!-- Bouquets -->
+                <div class="flower-item flower-bouquet-1">💐</div>
+                <div class="flower-item flower-bouquet-2">💐</div>
+                <!-- Hearts -->
+                <div class="flower-item flower-heart-1">💖</div>
+                <div class="flower-item flower-heart-2">💗</div>
+            </div>
+            
+            <div class="scene-1-content">
+                <h1 class="reveal-text">For My Beautiful Azhaka</h1>
+                <p class="reveal-text subtitle-text">Azhaka Rajpoot Khokhar</p>
+                <p class="reveal-text love-intro">You are the most beautiful woman I have ever seen. Your eyes sparkle like diamonds, your smile lights up my entire world. This is our love story, written with all my heart.</p>
+                <div class="scroll-indicator">
+                    <span>Scroll down to explore our story</span>
+                    <div class="scroll-arrow">↓</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scene 2: The Reasons - 3D Flip Cards -->
+        <section id="scene-2" class="scene scene-2">
+            <h2 class="section-title reveal-text">Why You Are So Beautiful</h2>
+            
+            <div class="cards-container">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="card-content">
+                                <h3>Your Eyes</h3>
+                                <div class="card-icon">👀</div>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="card-content">
+                                <h3>So Beautiful</h3>
+                                <p>Your eyes are like deep oceans I could get lost in forever. They tell me everything without you saying a word.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="card-content">
+                                <h3>Your Smile</h3>
+                                <div class="card-icon">😊</div>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="card-content">
+                                <h3>Makes Me melt</h3>
+                                <p>When you smile, the whole world stops. Your smile is the reason I wake up happy every single day.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="card-content">
+                                <h3>Your Voice</h3>
+                                <div class="card-icon">🎤</div>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="card-content">
+                                <h3>Like Music</h3>
+                                <p>Your voice is the sweetest melody. When you speak, it's like angels singing just for me.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="card-content">
+                                <h3>Your Heart</h3>
+                                <div class="card-icon">💖</div>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="card-content">
+                                <h3>Pure Gold</h3>
+                                <p>You have the most beautiful heart, so kind, so loving, so pure. You make everyone around you better.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scene 3: The Journey - Our Love Story -->
+        <section id="scene-3" class="scene scene-3">
+            <div class="parallax-petals">
+                <div class="petal petal-layer-1">🌸</div>
+                <div class="petal petal-layer-2">🌹</div>
+                <div class="petal petal-layer-3">🌷</div>
+            </div>
+            
+            <div class="journey-content">
+                <h2 class="section-title reveal-text">Our Love Story</h2>
+                
+                <div class="timeline">
+                    <!-- WhatsApp First Meeting -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon">📱</div>
+                        <div class="timeline-content">
+                            <h3>First Message on WhatsApp</h3>
+                            <p>The day you messaged me on WhatsApp, my heart skipped a beat. I didn't know then that this simple message would change my life forever. Your words on that small screen gave me butterflies I never knew existed.</p>
+                            <span class="memory-date">The day everything began</span>
+                        </div>
+                    </div>
+                    
+                    <!-- First Meeting -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon">💑</div>
+                        <div class="timeline-content">
+                            <h3>The Day We First Met</h3>
+                            <p>When I saw you for the first time in person, time stopped. You were even more beautiful than your photos. Your presence filled the air with magic. I couldn't believe this gorgeous woman was real, and she was here, with me.</p>
+                            <span class="memory-date">My heart found its home</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Holding Hands -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🤝</div>
+                        <div class="timeline-content">
+                            <h3>When I Held Your Hand</h3>
+                            <p>The first time our hands touched, electricity shot through my entire body. Your hand fit perfectly in mine, like we were made for each other. In that moment, I knew I never wanted to let go. Your soft, warm hand became my safe place.</p>
+                            <span class="memory-date">My soul touched yours</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Hand Kiss -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon">💋</div>
+                        <div class="timeline-content">
+                            <h3>The Kiss on Your Hand</h3>
+                            <p>That was the best day of my life. When I gently lifted your hand and pressed my lips to it, I was promising you forever. You blushed so beautifully, and in that moment, I saw our entire future together. I will cherish that memory until my last breath.</p>
+                            <span class="memory-date">The most perfect day ever</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Growing Love -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🌹</div>
+                        <div class="timeline-content">
+                            <h3>Our Love Growing</h3>
+                            <p>Every day with you is better than the last. Our love grows deeper, stronger, more beautiful. You are my best friend, my lover, my everything. I fall in love with you more with every passing moment.</p>
+                            <span class="memory-date">Forever and always</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scene 4: The Finale -->
+        <section id="scene-4" class="scene scene-4">
+            <div class="beating-heart">
+                <div class="heart-shape">❤️</div>
+            </div>
+            
+            <div class="love-letter">
+                <h2 class="letter-title">My Dearest Azhaka</h2>
+                <div class="letter-content">
+                    <p>You are the most beautiful woman in this entire world. When I look at you, I see angels, I see dreams coming true, I see my entire future.</p>
+                    
+                    <p>From the moment you first messaged me on WhatsApp, I knew something magical was happening. And when we finally met, when I saw your beautiful face in person, my heart knew it had found its home.</p>
+                    
+                    <p>That day when I held your hand for the first time, I felt like I was holding the entire universe. And when I kissed your hand, I was kissing my future, my happiness, my everything.</p>
+                    
+                    <p>You make me a better man. Your beauty is not just in your face, but in your heart, your soul, your kindness, your love. You are perfect in every way.</p>
+                    
+                    <p>I promise to love you forever, to protect you, to make you smile every single day, to be the man you deserve.</p>
+                    
+                    <p class="signature">With all my heart and soul,<br><strong>Azaz Ahmad</strong><br><span class="signature-emoji">💕</span></p>
+                </div>
+            </div>
+            
+            <div class="final-message">
+                <p>I Love You Azhaka</p>
+                <p class="forever-text">Forever & Always 💕</p>
+            </div>
+            
+            <!-- Floating Flowers at the bottom -->
+            <div class="bottom-flowers">
+                <span>🌹</span>
+                <span>🌷</span>
+                <span>🌺</span>
+                <span>🌸</span>
+                <span>🌻</span>
+                <span>💐</span>
+                <span>🌹</span>
+                <span>🌷</span>
+            </div>
+        </section>
     </div>
 
-    <!-- Hidden Success Screen -->
-    <div class="success-screen" id="success-screen">
-        <div class="hearts-container" id="hearts-container"></div>
-        <div class="success-content">
-            <h1 class="success-title">Thank you, my love! ❤️</h1>
-            <p class="success-message">I promise to be better. I love you so much, Azhaka!</p>
-        </div>
-        <div class="sorry-wall" id="sorry-wall"></div>
+    <!-- Parallax Petals Background -->
+    <div id="parallax-petals" class="parallax-background">
+        <div class="floating-petal petal-1">🌸</div>
+        <div class="floating-petal petal-2">🌹</div>
+        <div class="floating-petal petal-3">🌷</div>
+        <div class="floating-petal petal-4">🌺</div>
+        <div class="floating-petal petal-5">💖</div>
+        <div class="floating-petal petal-6">💗</div>
     </div>
 
     <script src="script.js"></script>
